@@ -1,0 +1,55 @@
+<div>
+    <carousel>
+        <slide *ngFor="let item of promotion">
+          <img src="{{item.Images}}" alt="First slide" style="display: block; width: 100%;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{item.PromotionName}}</h3>
+          
+          </div>
+        </slide>
+      </carousel>
+</div>
+<div class="container-fluid ">
+  <div fxLayout="row wrap" fxLayoutAlign="space-around start">
+    <div fxFlex="15" fxFlex.xs="100" fxFlex.sm="100">
+      <div  fxLayout="row wrap" fxLayoutAlign="space-around start">
+          <img src="assets/side1.jpg" class="image padding media" fxFlex="100" fxFlex.xs="33" fxFlex.sm="33"  fxHide.md fxFlex.lg="100" fxFlex.xl="100" style="padding-top:22px !important" class="dif">
+          <img src="assets/side2.jpg" class="image padding media" fxFlex="100" fxFlex.xs="33" fxFlex.sm="33"  fxHide.md fxFlex.lg="100" fxFlex.xl="100">
+          <img src="assets/side3.jpg" class="image padding media" fxFlex="100" fxFlex.xs="33" fxFlex.sm="33"  fxHide.md fxFlex.lg="100" fxFlex.xl="100">
+      
+      </div>
+       </div>
+    <div fxFlex="85" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" class= "padding-top">
+        <div class="box">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+              <h3 class="pull-left col-xs-8">Featured Products</h3>
+              <button class="pull-right col-xs-4" type="button" class="btn btn-lg btn-primary" (click)="products()">View All Products</button>
+          </div>
+          <app-carousel-feature [inputData]="productsList"  class="cards" >
+
+            </app-carousel-feature>
+
+          
+        </div>
+
+        <div class="box margin-top">
+          <div fxLayout="row" fxLayoutAlign="space-between center" >
+              <h3 class="pull-left col-xs-8">Featured Shops</h3>
+            <button class="pull-right col-xs-4" type="button" class="btn btn-lg btn-primary" (click)="shops()" >View All Shops</button>
+          </div>
+         
+              <app-carousel-shop [inputData]="shopList"  class="cards" >
+
+                </app-carousel-shop>
+              <!-- <div *ngFor ="let item of shopList" class="cards padding">
+  
+              </div> -->
+         
+
+        </div>
+          </div>
+
+      </div>
+
+
+  </div>

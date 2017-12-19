@@ -1,0 +1,62 @@
+
+     slide{
+        height: auto;
+    }
+    .padding{
+        padding:6px;
+    }
+    .box{
+        background-color: #fefefe;
+        padding: 24px;
+    }
+    .padding-top{
+        padding-top:20px;
+    }
+    .margin-top{
+        margin-top:20px;
+    }
+    button{
+        font-size: 12px;
+        cursor:pointer;
+    }
+    @media only screen and (max-width: 900px){
+        .dif{
+            height: 106px
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .media {
+            height:100px;
+            width:auto;
+        }
+        h3{
+            font-size: 16px;
+        }
+        
+    }
+    .productPic{
+        height: 120px;
+        width: 120px;
+        padding-top: 26px !important;
+        margin: auto;
+       
+    }
+    .cards{
+        height: 350px;
+        width: 400px;
+        text-align: center;
+    }
+    label{
+        font-size: 12px;
+    }
+    .green{
+        color:#bbd3a2;
+    }
+    .blue{
+        color:#90b7dd;
+    }
+    .pdb{
+        margin-bottom: 26px !important;
+    }
+    

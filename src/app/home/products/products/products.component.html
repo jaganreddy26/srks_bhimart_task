@@ -1,0 +1,54 @@
+<div class="container-fluid ">
+    <div class="background card">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="padding back">
+          <div class="heading">
+              <a href="" style="color:black;cursor:pointer;text-decoration:none">
+                  Home
+              </a>
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <label>All Products</label>
+          </div>
+         <!-- <div>
+            <select>
+              <option>1</option>
+              <option>1</option>
+            </select> 
+          </div> -->
+         
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start center" class="padding">
+            <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="30" fxFlex.lg="25" fxFlex.xl="25" *ngFor ="let item of productsList" class="cards padding">
+              <img src="{{item.productPic}}" class="productPic">
+              <div>
+                  <label>{{item.ProductName}}</label>
+              </div>
+              
+              <h6>{{item.MRP}} 
+                <span></span>
+                <span>
+                  <s>({{item.SellignPrice}})</s>
+              </span>
+            </h6>
+              <div class="green">
+                <img src="assets/shop.png" height="12px" width="12px">
+                 <label>{{item.ShopName}}</label>
+                </div>
+                <div class="blue">
+                    <img src="assets/location.png" height="12px" width="12px">
+                    <label>{{item.Distance}}</label>
+                </div>
+                <div *ngIf="item.AvgRatingCount === 0">
+                        <button class="pull-right col-xs-4" type="button" class="btn btn-lg btn-info" >Not Rated</button>
+                      </div>
+                    <div *ngIf="item.AvgRatingCount > 0">
+                    <button class="pull-right col-xs-4" type="button" class="btn btn-lg btn-warning pdb" >
+                      <label>{{item.AvgRatingCount}}</label>
+                      <i class="fa fa-star" aria-hidden="true" style="color:black !important"></i>
+                    </button><span>({{item.RatingCount}})</span>
+                  </div>
+            </div>
+          </div>
+      </div>
+      
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+<div class="input-group padding" >
+        <span class="input-group-addon" id="basic-addon1" style="width: 37px"><i class="fa fa-user" aria-hidden="true"></i></span>
+        <input class="padding-side" type="text"  style="width: 200px !important" class="form-control"  aria-describedby="basic-addon1"  placeholder="First Name" [(ngModel)]="signup.FirstName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="input-group padding" >
+            <span class="input-group-addon" id="basic-addon1" style="width: 37px"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            <input class="padding-side" type="text"  style="width: 200px !important" class="form-control"  aria-describedby="basic-addon1"  placeholder="EmailId" [(ngModel)]="signup.EmailId" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="input-group padding" >
+                <span class="input-group-addon" id="basic-addon1" style="width: 37px">+91</span>
+                <input class="padding-side" type="number"  style="width: 200px !important" class="form-control"  aria-describedby="basic-addon1"  placeholder="MobileNumber" [(ngModel)]="signup.MobileNumber" [ngModelOptions]="{standalone: true}">
+              </div>
+              
+          <div class="input-group padding" >
+                <span class="input-group-addon" id="basic-addon1" style="width: 37px"><i class="fa fa-key" aria-hidden="true"></i></span>
+                <input class="padding-side" type="password"  style="width: 200px !important" class="form-control"  aria-describedby="basic-addon1"  placeholder="Password" [(ngModel)]="signup.pwd" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="input-group padding">
+                    <span class="input-group-addon" id="basic-addon1" style="width: 37px"><i class="fa fa-building" aria-hidden="true"></i></span>
+                    <input class="padding-side" type="text"  style="width: 200px !important" class="form-control"  aria-describedby="basic-addon1"  placeholder="City" [(ngModel)]="signup.City" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="input-group padding">
+                        <span class="input-group-addon" id="basic-addon1" style="width: 37px"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <input class="padding-side" type="text"  style="width: 200px !important" class="form-control"  aria-describedby="basic-addon1"  placeholder="Area" [(ngModel)]="signup.Area" [ngModelOptions]="{standalone: true}">
+                      </div>
+                      <div class="input-group padding">
+                            <span class="input-group-addon" id="basic-addon1" style="width: 37px"><i class="fa fa-map-pin" aria-hidden="true"></i></span>
+                            <input class="padding-side" type="number"  style="width: 200px !important" class="form-control"  aria-describedby="basic-addon1"  placeholder="Pincode" [(ngModel)]="signup.Pincode" [ngModelOptions]="{standalone: true}">
+                          </div>
+ 
+   
+                          <div fxLayout="row" fxLayoutAlign="end end">
+                            <button  type="submit" class="btn btn-primary padding" (click)="signUp()" style="padding-left:12px">Sign In</button>
+                            </div>
+                          </div>

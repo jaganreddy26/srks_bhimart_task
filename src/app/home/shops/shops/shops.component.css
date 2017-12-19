@@ -1,0 +1,43 @@
+.back{
+    background-color: #f5f5f5;
+    padding: 14px;
+    margin-top:8px;
+  }
+  .background{
+      background-color: #ffffff !important;
+      height: auto;
+      width: 100%;
+  }
+  .heading{
+      font-size: 14px;
+  }
+  .productPic{
+      height: 126px;
+      width: 222px;
+      margin: auto;
+     
+  }
+  button{
+      font-size: 12px;
+      cursor:pointer;
+  }
+  .cards{
+      height: 300px;
+      width: 320px;
+      text-align: center;
+  }
+  label{
+      font-size: 12px;
+  }
+  .green{
+      color:#bbd3a2;
+  }
+  .blue{
+      color:#90b7dd;
+  }
+  .padding{
+      padding: 24px;
+  }
+  .pdb{
+    padding-bottom: 1px !important;
+}

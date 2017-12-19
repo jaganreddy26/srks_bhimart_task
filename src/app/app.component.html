@@ -1,0 +1,112 @@
+<div class="container-fluid">
+        <div class="row headerpart">
+                <div fxLayout="row" fxLayoutAlign="space-between center"  style="width: 100%">
+                    <div fxFlex="20" style="width:200px">
+                            <div  fxLayout="row" fxLayoutAlign="start center">
+                                    <div>
+                                            <img src="assets/bhimart-white.png" class="img-responsive logo">
+                                        </div>
+
+                            </div>
+                    </div>
+                    <div fxFlex="50" fxHide.xs fxHide.sm>
+                        <div fxLayout="row" fxLayoutAlign="start center" class="container header-search">    
+                            
+                            <div class="all-cat">
+                                        <select class="form-control" id="exampleSelect1">
+                                                <option  *ngFor="let item of allcatagories">
+                                                        <label>{{item.Name}}</label>
+                                                    </option>
+                                        </select>
+                                </div>
+                                <div class="search-mid">
+                                        <input type="text" name="search" placeholder="search....." class="form-control header-search-input" style="width:100%">
+                                       
+                                    </div>
+                                    <div>
+                                            <button type="button" class="btn btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </div>
+                        </div>
+                    </div>
+                    <div fxFlex="30">
+                        <div  fxLayout="row " fxLayoutAlign="end center">
+                                <a href="checkout.html">
+                                        <i class="fa fa-shopping-cart cart-icon pull-left cart-symbol"></i>
+                                        <label id="cart_badge" class="badge badge-warning pull-left ng-binding"></label>
+                                    </a>
+                            <button href="#" class="header-login btn1 btn-signin" (click)="openModal(template)">
+                                <i class="fa fa-lock" aria-hidden="true"></i> Sign In
+                            </button>
+                            <a  href="" target="_blank" class="header-reg btn1 btn-signin">
+                                        <i class="fa fa-user" aria-hidden="true"></i> Register as Vendor
+                                    </a>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div fxFlex="50" >
+                        <div fxLayout="row" fxLayoutAlign="start center" class="container header-search">    
+
+                                <div>
+                                        <input type="text" name="search" placeholder="search....." class="form-control header-search-input" style="width:206px">
+                                       
+                                    </div>
+                                    <div>
+                                            <button type="button" class="btn btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+            </div>
+            <!-- <div class="row visible-xs">
+          
+            <div class="col-xs-10 col-md-6 container header-search">
+
+           
+            </div>
+            </div> -->
+            <!-- <div class="header-main-cart container col-md-3 col-sm-4 col-xs-6 pull-right">
+                    
+
+               
+            </div> -->
+    </div>
+                <router-outlet>
+                
+                </router-outlet>
+                <footer>
+                    <div fxLayout="row" fxLayoutAlign="space-around center">
+                        <label>
+                                Terms & Conditions
+                        </label>
+                        <label>
+
+                                &copy;  2017 Bhimart . All rights reserved
+                        </label>
+                    </div>
+                </footer>
+                
+                <ng-template #template>
+                    <div class="modal-header popup">
+                    <div fxFlex="row" fxLayoutAlign="space-between center">
+                            <h4 class="modal-title pull-left">Login/Registraion</h4>
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                  
+                     
+                    </div>
+                    <div class="modal-body"  fxFlex="row" fxLayoutAlign="space-between center">
+                        <app-auth> </app-auth>
+                        <div>
+                                <img src="assets/bhimar.png" height="auto" width="150px">
+                            </div>
+                    </div>
+                  </ng-template>
