@@ -18,6 +18,9 @@ import { ShopService } from './shops/shop.service';
 
 import {CarouselFeatureComponent} from './landing-page/landing-page/carousel-feature.component';
 import {CarouselShopComponent} from './landing-page/landing-page/carousel-shop.component';
+import { ShopDetailsComponent } from './shop-details/shop-details.component';
+import { ShopDetailsService } from './shop-details/shop-details.service';
+import { CarouselProductsComponent } from './shop-details/carosel-product.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent},
@@ -25,6 +28,7 @@ const routes: Routes = [
   { path: 'contactus', component: ContactUsComponent},
   { path: 'allproducts',   component: ProductsComponent},
   { path: 'allshops',  component: ShopsComponent},
+  { path: 'shop-details',  component: ShopDetailsComponent},
 
 
 
@@ -33,16 +37,19 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule,
+
+
+  CommonModule,
      RouterModule.forRoot(routes, { useHash: true }),
     SharedModule.forRoot()
     ],
-  providers: [LandingPageService, ProductService , ShopService],
+  providers: [LandingPageService, ProductService , ShopService , ShopDetailsService],
   declarations: [LandingPageComponent,
      AboutUsComponent, ContactUsComponent,
       LoginComponent, RegistrationComponent,
        AuthComponent, ProductsComponent, ShopsComponent,
-       CarouselFeatureComponent, CarouselShopComponent
+       CarouselFeatureComponent, CarouselShopComponent, ShopDetailsComponent,
+       CarouselProductsComponent
       ],
   exports: [RouterModule, AuthComponent],
 })

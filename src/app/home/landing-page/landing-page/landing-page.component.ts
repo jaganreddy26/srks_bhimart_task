@@ -29,6 +29,7 @@ export class LandingPageComponent implements OnInit {
       this.shopList = data.Shoplist.Response;
       this.categories = data.Categories.Response;
       this.promotion = data.Promotion.Response;
+      console.log(this.shopList);
     });
   }
   products() {

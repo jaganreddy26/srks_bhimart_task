@@ -9,6 +9,8 @@ import { NgxCarouselModule } from 'ngx-carousel';
 import { BsDropdownModule, TabsModule, ModalModule , CarouselModule} from 'ngx-bootstrap';
 
 import {CarouselComponent} from './components/carousel.component';
+import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
 
 @NgModule({
   imports: [
@@ -16,6 +18,11 @@ import {CarouselComponent} from './components/carousel.component';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ModalModule.forRoot(),
+    AgmCoreModule.forRoot({ // @agm/core
+      libraries: ['places'],
+      apiKey: 'AIzaSyD0WGiIQPnML6MYa5JmQPt7kopUF4uMB7s',
+    }),
+    AgmDirectionModule,
     FlexLayoutModule,
     CarouselModule,
     NgxCarouselModule
@@ -31,7 +38,9 @@ import {CarouselComponent} from './components/carousel.component';
     FlexLayoutModule,
     CarouselModule,
     CarouselComponent,
-    NgxCarouselModule
+    NgxCarouselModule,
+    AgmCoreModule,
+    AgmDirectionModule
   ]
 })
 export class SharedModule {

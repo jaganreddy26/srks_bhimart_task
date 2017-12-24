@@ -13,5 +13,9 @@ export class ShopService {
   getallCatagories(){
     return this.http.get('https://customerapi.bhimart.com/OpenApi/GetAllCategories');
   }
+ 
 
 }
+
+
+

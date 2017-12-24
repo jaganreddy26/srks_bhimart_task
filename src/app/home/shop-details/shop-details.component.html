@@ -1,0 +1,104 @@
+<div class="container-fluid ">
+  <div class="card">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="padding">
+          <div class="heading">
+            <a href="" style="color:black;cursor:pointer;text-decoration:none">
+                Home
+            </a>
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <label>Shop Details</label>
+          </div>
+            </div>
+                <div class="padding">
+                  <div class="card padding" fxLayout="row wrap" fxLayoutAlign="start start">
+                    <div *ngFor="let img of images" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="60" fxFlex.lg="30">
+                        <img src="{{img.imagename}}" height="300px">
+                    </div>
+                    <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="40" fxFlex.lg="70">
+                    <h3>{{datalist.ShopName}}</h3>
+                    <div *ngIf="datalist.AvgRatingCount === 0">
+                      <button class="pull-right col-xs-4" type="button" class="btn btn-lg btn-info" >Not Rated</button>
+                    </div> 
+                  <div *ngIf="datalist.AvgRatingCount > 0">
+                  <button class="pull-right col-xs-4" type="button" class="btn btn-lg btn-warning pdb">
+                    <label>{{datalist.AvgRatingCount}}</label>
+                    <i class="fa fa-star" aria-hidden="true" style="color:black !important"></i>
+                  </button>
+                </div>
+                    <hr style="width:100% !important">
+                    <h5 class="toolbar">Shop Details</h5>
+                    <div class="blue padding">
+                      <img src="assets/shopq.png" height="12px" width="12px">
+                      <label>{{datalist.Adress}}</label>
+                      </div>
+                      <div class="blue padding">
+                        <img src="assets/icon.png" height="12px" width="12px">
+                        <label>{{datalist.phonenumber}}</label>
+                        <img src="assets/location-mark1.png" height="12px" width="12px">
+                        <label>{{datalist.distance}}</label>
+                        </div>
+                        <h5 class="toolbar">About Shop</h5>
+                        <div class="padding">{{datalist.Description}}</div>
+                  </div>
+                  
+                  </div>
+   
+</div>
+</div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+      <tabset type="pills" >
+      
+              <tab  *ngFor="let item of catgories" [heading]="item.name" (select)="tabsInfo(item)"
+              [active]="item.active" >
+                  <!-- <app-carousel-catproducts [inputData]="products" class="cards"></app-carousel-catproducts> -->
+                  <div class="padding card" style="text-align:center">
+                    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                    <div fxFlex.xs="50" fxFlex.sm="50" fxFlex.md="25" fxFlex.lg="20" *ngFor="let product of products" class="padding">
+                  <img src="{{product.productPic}}" class="productPic">
+                  <div>
+                      <label>{{product.ProductName}}</label>
+                  </div>
+                  <h6>{{product.MRP}} 
+                    <span></span>
+                    <span>
+                      <s>({{product.SellignPrice}})</s>
+                  </span>
+                </h6>
+                    <div *ngIf="product.AvgRatingCount === 0">
+                            <button class="pull-right col-xs-4" type="button" class="btn btn-lg btn-info" >Not Rated</button>
+                          </div>
+                        <div *ngIf="product.AvgRatingCount > 0">
+                        <button class="pull-right col-xs-4" type="button" class="btn btn-lg btn-warning pdb" >
+                          <label>{{product.AvgRatingCount}}</label>
+                          <i class="fa fa-star" aria-hidden="true" style="color:black !important"></i>
+                        </button><span>({{product.RatingCount}})</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="isStatus === false" style="text-align:center" fxLayout="row" fxLayoutAlign="center center">
+                      <img  src="assets/empty_kart.png" height="200px" class="padding">
+                  </div>
+                </div>
+              </tab> 
+ 
+    </tabset>
+    </div>
+<div class="card">
+    <div class="heading">
+        <a href="" style="color:black;cursor:pointer;text-decoration:none">
+            Home
+        </a>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <label>Shop Details</label>
+      </div>
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="10">
+ 
+        <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+       
+      </agm-map>
+</div>
+
+
+</div>
