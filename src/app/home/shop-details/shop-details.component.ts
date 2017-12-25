@@ -10,7 +10,7 @@ import { MapsAPILoader } from '@agm/core';
 })
 export class ShopDetailsComponent implements OnInit {
   paramId: any;
-  datalist:any;
+  datalist:any = [];
   images:any;
   catgories:any;
   catId:any;
@@ -76,18 +76,16 @@ export class ShopDetailsComponent implements OnInit {
   }
   
   tabsInfo(item: any) {
-
+    item.active = true;
     this.getProducts(item.catId , this.paramId, false);
   }
   getProducts(catId: any, shopId: any, firstTime: boolean ) {
-    console.log(catId+ ' '+ firstTime);
-    this.shopDetailsService.getShopproducts(catId, shopId).subscribe((data: any) => {
+     this.shopDetailsService.getShopproducts(catId, shopId).subscribe((data: any) => {
      this.products = Object.assign([], data.response);
     
-      if(this.products.length == 0 && firstTime) {
+      if(this.products.length == 0 && firstTime == true) {
         this.index++;
-        console.log(this.index);
-        console.log(this.datalist.Shopcat.length-1 >= this.index)
+
         if(this.datalist.Shopcat.length-1 >= this.index){
           this.catId = this.datalist.Shopcat[this.index].catId;
 
@@ -95,11 +93,11 @@ export class ShopDetailsComponent implements OnInit {
         } else {
           this.datalist.Shopcat[0].active = true;
         }
-      } else {
+      } else if(firstTime == true){
         this.datalist.Shopcat[this.index].active = true;
       }
      this.isStatus = data.IsStatus;
-     console.log(this.isStatus);
+
     });
   }
  
