@@ -53,8 +53,8 @@
               [active]="item.active" >
                   <!-- <app-carousel-catproducts [inputData]="products" class="cards"></app-carousel-catproducts> -->
                   <div class="padding card" style="text-align:center">
-                    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-                    <div fxFlex.xs="50" fxFlex.sm="50" fxFlex.md="25" fxFlex.lg="20" *ngFor="let product of products" class="padding">
+                    <div fxLayout="row wrap" fxLayoutAlign="start center">
+                    <div fxFlex.xs="50" fxFlex.sm="50" fxFlex.md="33.333" fxFlex.lg="25" *ngFor="let product of products" class="padding">
                   <img src="{{product.productPic}}" class="productPic">
                   <div>
                       <label>{{product.ProductName}}</label>

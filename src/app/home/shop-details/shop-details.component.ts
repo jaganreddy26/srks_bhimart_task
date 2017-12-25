@@ -92,6 +92,8 @@ export class ShopDetailsComponent implements OnInit {
           this.catId = this.datalist.Shopcat[this.index].catId;
 
            this.getProducts(this.catId , this.paramId, firstTime);
+        } else {
+          this.datalist.Shopcat[0].active = true;
         }
       } else {
         this.datalist.Shopcat[this.index].active = true;
