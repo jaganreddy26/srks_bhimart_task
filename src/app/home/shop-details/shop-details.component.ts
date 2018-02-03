@@ -62,7 +62,7 @@ export class ShopDetailsComponent implements OnInit {
       this.lng = this.datalist.lang;
         this.catId = this.datalist.Shopcat[0].catId;
         console.log(this.catId);
-         this.getProducts(this.catId , this.paramId, true);
+         this.getProducts(this.catId , this.paramId);
          this.getDirection();
     });
   }
@@ -77,30 +77,32 @@ export class ShopDetailsComponent implements OnInit {
   
   tabsInfo(item: any) {
     item.active = true;
-    this.getProducts(item.catId , this.paramId, false);
+    this.getProducts(item.catId , this.paramId);
   }
-  getProducts(catId: any, shopId: any, firstTime: boolean ) {
-     this.shopDetailsService.getShopproducts(catId, shopId).subscribe((data: any) => {
-     this.products = Object.assign([], data.response);
+  // getProducts(catId: any, shopId: any, firstTime: boolean ) {
+  //    this.shopDetailsService.getShopproducts(catId, shopId).subscribe((data: any) => {
+  //    this.products = Object.assign([], data.response);
     
-      if(this.products.length == 0 && firstTime == true) {
-        this.index++;
+  //     if(this.products.length == 0 && firstTime == true) {
+  //       this.index++;
 
-        if(this.datalist.Shopcat.length-1 >= this.index){
-          this.catId = this.datalist.Shopcat[this.index].catId;
+  //       if(this.datalist.Shopcat.length-1 >= this.index){
+  //         this.catId = this.datalist.Shopcat[this.index].catId;
 
-           this.getProducts(this.catId , this.paramId, firstTime);
-        } else {
-          this.datalist.Shopcat[0].active = true;
-        }
-      } else if(firstTime == true){
-        this.datalist.Shopcat[this.index].active = true;
-      }
-     this.isStatus = data.IsStatus;
+  //          this.getProducts(this.catId , this.paramId, firstTime);
+  //       } else {
+  //         this.datalist.Shopcat[0].active = true;
+  //       }
+  //     } else if(firstTime == true){
+  //       this.datalist.Shopcat[this.index].active = true;
+  //     }
+  //    this.isStatus = data.IsStatus;
 
-    });
+  //   });
+  // }
+  getProducts(catId: any, shopId: any){
+
   }
- 
   }
 
 
